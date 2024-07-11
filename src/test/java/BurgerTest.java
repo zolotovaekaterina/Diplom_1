@@ -52,8 +52,8 @@ public class BurgerTest {
         burger.addIngredient(filling);
         burger.addIngredient(sauce);
         burger.moveIngredient(firstIndex,secondIndex);
-        Assert.assertEquals(filling, burger.ingredients.get(1));
-        Assert.assertEquals(sauce, burger.ingredients.get(0));
+        Assert.assertEquals(filling, burger.ingredients.get(secondIndex));
+        Assert.assertEquals(sauce, burger.ingredients.get(firstIndex));
     }
 
     @Test
