@@ -19,6 +19,10 @@ public class BurgerTest {
     Ingredient ingredientTwo;
     @Mock
     Bun bun;
+    @Mock
+    Ingredient filling;
+    @Mock
+    Ingredient sauce;
 
     Burger burger = new Burger();
 
@@ -43,10 +47,13 @@ public class BurgerTest {
 
     @Test
     public void moveIngredientTest() {
-        burger.addIngredient(ingredientOne);
-        burger.addIngredient(ingredientTwo);
-        burger.moveIngredient(0, 1);
-        Assert.assertEquals(ingredientOne, burger.ingredients.get(1));
+        var firstIndex = 0;
+        var secondIndex = 1;
+        burger.addIngredient(filling);
+        burger.addIngredient(sauce);
+        burger.moveIngredient(firstIndex,secondIndex);
+        Assert.assertEquals(filling, burger.ingredients.get(1));
+        Assert.assertEquals(sauce, burger.ingredients.get(0));
     }
 
     @Test
